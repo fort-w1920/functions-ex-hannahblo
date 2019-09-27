@@ -1,0 +1,45 @@
+## Faszinierend funkelnd funktional -funzen muss es halt!
+
+Lesen Sie das ["Functions"](http://adv-r.had.co.nz/Functions.html)-Kapitel aus
+dem *Advanced R Programming*-Buch von Hadley Wickham aufmerksam durch. 
+
+Bearbeiten Sie die folgenden 
+von dort übernommenen Aufgaben:
+
+a) Schreiben Sie die folgenden verwirrenden Funktionsaufrufe so um dass sie möglichst klar & einfach zu verstehen sind:
+```{r, 1a, eval=FALSE}
+set.seed(20141012)
+x <- sample(replace = TRUE, 20, x = c(1:10, NA))
+y <- runif(min = 0, max = 1, 20)
+cor(m = "k", y = y, u = "p", x = x)
+```
+
+b) Was gibt diese Funktion zurück? Warum? Welches Prinzip illustriert sie?
+```{r, 1b, eval=FALSE}
+f1 <- function(x = {
+    y <- 1
+    2
+  }, y = 0) {
+  x + y
+}
+```
+
+c) Was gibt diese Funktion zurück? Warum? Welches Prinzip illustriert sie?
+```{r, 1c, eval=FALSE}
+f2 <- function(x = z) {
+  z <- 100
+  x
+}
+``` 
+
+d) Schreiben sie eine *infix*-Funktion `%xor%` die eine XOR-Operation (entweder-oder-aber-nicht-beides) durchführt. Überprüfen Sie ihre Funktion mit den folgenden Tests:
+```{r, code = readLines("test-functions-xor.R"), eval=FALSE}
+``` 
+
+e) Wie kann jeweils der Zustand von `options()` und `par()` abgespeichert und wiederhergestellt werden?
+f) Schreiben Sie eine Funktion die ein neues Grafikfenster öffnet, `plot` mit den übergebenen Argumenten aufruft und das  zuvor geöffnete Grafikfenster wieder schließt (egal ob die übergebenen Argumente funktioniert haben oder nicht.)
+g) Was gibt der folgende Code zurück? Warum? Was bedeuten die drei verschiedenen `c`s in der zweiten Zeile?
+```{r, 1g, eval=FALSE}
+c <- 10
+c(c = c)
+```
